@@ -2,7 +2,7 @@
 
 Case-based reasoning (CBR) is the process of solving new problems based on the solutions of similar past problems <sup>[1]</sup>. In data science CBR is a technique which allows us to find missing values from a given set of data, and each variable has its own set of characteristics. If we have a variable that does not contain one or more characteristic, we can find a similar variable using Euclidean distance and predict the missing characteristics.
 
-In this repository there are 2 Python scripts, one for finding missing values and the other for calculating which characteristics (columns) influence/define the missing value the most. There is also data generator written in Java in a folder named *CaseBasedReasoning Generator*. Besides the aforementioned scripts and generator there is already a generated file containing data (including missing values) and statistics collected from users of a telecommunication company. Using that data we can train a model and check the correctness of the results.
+In this repository there are 2 Python scripts, one for finding missing values and the other for calculating which characteristics (columns) influence/define the missing value the most. There is also already a generated file containing data (including missing values) and statistics collected from users of a telecommunication company. Using that data we can train a model and check the correctness of the results.
 
 ## Getting started
 
@@ -21,8 +21,6 @@ pip install pandas
 
 This command also installs numpy module.
 
-To run the Java generator you should have **Java version 8** or newer installed on your machine. Java generator **is not required** for demonstrating this algorithm.
-
 ### Running
 
 This git repository is consisted of the following files:
@@ -31,7 +29,6 @@ This git repository is consisted of the following files:
 - *CalculateIV.py*
 - *telecom.csv*
 - *telecomStats.txt*
-- *CaseBasedReasoning Generator* project
 
 File *telecom.csv* contains all data from the telecommunication company in *csv* format with columns:
 
@@ -68,8 +65,6 @@ customerId | predictedValue | realValue
 3997 | 4 | 5
 
 As we can see our predicting model is giving pretty good values, except for people older than 40. Those people usually do not use any kind of data/sms/call plans, and for that reason they are not our target population for presenting new tariffs. It should also be mentioned that data used in prediction is quite random so edge cases are not deeply covered (ex: people older than 40 years old).
-
-If we run the generator, its output will be *telcom.csv* and *telcomStats.txt* files. The file *telcomStats.txt* gives us information about the distribution of the generated data.
 
 If we run *CalculateIV.py* we will get information about which columns influence missing value (in this case customer age is the column that contains missing values):
 
